@@ -212,6 +212,7 @@ public class MenjacnicaGUI extends JFrame {
 	private JTextArea getTextArea() {
 		if (textArea == null) {
 			textArea = new JTextArea();
+			textArea.setWrapStyleWord(true);
 			textArea.setBackground(Color.WHITE);
 		}
 		return textArea;
@@ -219,6 +220,8 @@ public class MenjacnicaGUI extends JFrame {
 	private JTable getTable() {
 		if (table == null) {
 			table = new JTable();
+			table.setColumnSelectionAllowed(true);
+			table.setCellSelectionEnabled(true);
 			table.setModel(new DefaultTableModel(
 				new Object[][] {
 					{null, null, null, null, null, null},
@@ -266,6 +269,12 @@ public class MenjacnicaGUI extends JFrame {
 	private JButton getBtnObrisiKurs() {
 		if (btnObrisiKurs == null) {
 			btnObrisiKurs = new JButton("Obri\u0161i kurs");
+			btnObrisiKurs.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					ObrisiKursGUI ok = new ObrisiKursGUI(mn);
+					ok.setVisible(true);
+				}
+			});
 			btnObrisiKurs.setBounds(438, 56, 119, 25);
 		}
 		return btnObrisiKurs;
@@ -300,6 +309,7 @@ public class MenjacnicaGUI extends JFrame {
 	private JMenuItem getMntmDodajKurs() {
 		if (mntmDodajKurs == null) {
 			mntmDodajKurs = new JMenuItem("Dodaj kurs");
+			
 			mntmDodajKurs.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					DodajKursGUI dk = new DodajKursGUI(mn);
@@ -312,6 +322,12 @@ public class MenjacnicaGUI extends JFrame {
 	private JMenuItem getMntmObriiKurs() {
 		if (mntmObriiKurs == null) {
 			mntmObriiKurs = new JMenuItem("Obri\u0161i kurs");
+			mntmObriiKurs.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					ObrisiKursGUI ok = new ObrisiKursGUI(mn);
+					ok.setVisible(true);
+				}
+			});
 		}
 		return mntmObriiKurs;
 	}
