@@ -161,7 +161,7 @@ public class DodajKursGUI extends JFrame {
 			btnDodaj.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					try {
-						String tekstKurs = "KURS: šifra: "+textFieldSifra.getText()+", naziv: "+textFieldNaziv.getText()+", prodajni :"+textFieldProdajniKurs.getText()+", kupovni: "+textFieldKupovniKurs.getText()+", srednji: "+textFieldSrednjiKurs.getText()+", skraceni naziv: "+textFieldSkraceniNaziv.getText();
+						String tekstKurs = "DODAVANJE KURSA: šifra: "+textFieldSifra.getText()+", naziv: "+textFieldNaziv.getText()+", prodajni :"+textFieldProdajniKurs.getText()+", kupovni: "+textFieldKupovniKurs.getText()+", srednji: "+textFieldSrednjiKurs.getText()+", skraceni naziv: "+textFieldSkraceniNaziv.getText();
 						mn.dopisivanje(tekstKurs);
 				} catch (Exception e1) {
 						JOptionPane.showMessageDialog(null,

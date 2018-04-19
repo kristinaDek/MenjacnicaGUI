@@ -143,7 +143,7 @@ public class MenjacnicaGUI extends JFrame {
 					int opcija = fc.showOpenDialog(null);
 					if(opcija == JFileChooser.APPROVE_OPTION) {
 						File f = fc.getSelectedFile();
-						textArea.append("Uèitan fajl: "+f.getName()+" ,gde "+f.getAbsolutePath());
+						textArea.append("\nUèitan fajl: "+f.getName()+" ,gde "+f.getAbsolutePath());
 					}
 				}
 			});
@@ -163,7 +163,7 @@ public class MenjacnicaGUI extends JFrame {
 					
 					if(opcija == JFileChooser.APPROVE_OPTION) {
 						File f = fc.getSelectedFile();
-						textArea.append("Saèuvan fajl: "+f.getName()+" ,gde "+f.getAbsolutePath());
+						textArea.append("\nSaèuvan fajl: "+f.getName()+" ,gde "+f.getAbsolutePath());
 					}
 						
 					
@@ -259,8 +259,7 @@ public class MenjacnicaGUI extends JFrame {
 			btnDodajKurs = new JButton("Dodaj kurs");
 			btnDodajKurs.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					DodajKursGUI dk = new DodajKursGUI(mn);
-					dk.setVisible(true);
+					dodaj();
 				}
 				
 			});
@@ -273,8 +272,7 @@ public class MenjacnicaGUI extends JFrame {
 			btnObrisiKurs = new JButton("Obri\u0161i kurs");
 			btnObrisiKurs.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					ObrisiKursGUI ok = new ObrisiKursGUI(mn);
-					ok.setVisible(true);
+					obrisi();
 				}
 			});
 			btnObrisiKurs.setBounds(438, 56, 119, 25);
@@ -284,6 +282,12 @@ public class MenjacnicaGUI extends JFrame {
 	private JButton getBtnIzvrsiZamenu() {
 		if (btnIzvrsiZamenu == null) {
 			btnIzvrsiZamenu = new JButton("Izvr\u0161i zamenu");
+			btnIzvrsiZamenu.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					izmeni();
+				}
+
+			});
 			btnIzvrsiZamenu.setBounds(438, 94, 119, 25);
 		}
 		return btnIzvrsiZamenu;
@@ -295,8 +299,20 @@ public class MenjacnicaGUI extends JFrame {
 				System.exit(0);
 	}
 	static void dopisivanje(String tekst) {
-		textArea.append(tekst);
+		textArea.append("\n"+tekst);
 		
+	}
+	private void dodaj() {
+		DodajKursGUI dk = new DodajKursGUI(mn);
+		dk.setVisible(true);
+	}
+	private void obrisi() {
+		ObrisiKursGUI ok = new ObrisiKursGUI(mn);
+		ok.setVisible(true);
+	}
+	private void izmeni() {
+		IzvrsiZamenuGUI iz = new IzvrsiZamenuGUI(mn);
+		iz.setVisible(true);
 	}
 	private JPopupMenu getPopupMenu_1() {
 		if (popupMenu_1 == null) {
@@ -314,8 +330,7 @@ public class MenjacnicaGUI extends JFrame {
 			
 			mntmDodajKurs.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					DodajKursGUI dk = new DodajKursGUI(mn);
-					dk.setVisible(true);
+					dodaj();
 				}
 			});
 		}
@@ -326,9 +341,9 @@ public class MenjacnicaGUI extends JFrame {
 			mntmObriiKurs = new JMenuItem("Obri\u0161i kurs");
 			mntmObriiKurs.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					ObrisiKursGUI ok = new ObrisiKursGUI(mn);
-					ok.setVisible(true);
+					obrisi();
 				}
+
 			});
 		}
 		return mntmObriiKurs;
