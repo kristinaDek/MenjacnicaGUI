@@ -93,7 +93,7 @@ public class MenjacnicaGUI extends JFrame {
 		});
 		
 		setMinimumSize(new Dimension(20, 20));
-		setIconImage(Toolkit.getDefaultToolkit().getImage(MenjacnicaGUI.class.getResource("/com/sun/java/swing/plaf/windows/icons/Computer.gif")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(MenjacnicaGUI.class.getResource("/Icons/fbc3f2cbbd97bd6b303a09369c33bc57.png")));
 		setTitle("Menjacnica");
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(100, 100, 587, 436);
@@ -241,6 +241,8 @@ public class MenjacnicaGUI extends JFrame {
 			));
 			table.getColumnModel().getColumn(1).setPreferredWidth(142);
 			addPopup(table, getPopupMenu_1());
+			table.setComponentPopupMenu(popupMenu_1);
+			
 		}
 		return table;
 	}
