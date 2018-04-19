@@ -351,6 +351,11 @@ public class MenjacnicaGUI extends JFrame {
 	private JMenuItem getMntmIzvriIzmenu() {
 		if (mntmIzvriIzmenu == null) {
 			mntmIzvriIzmenu = new JMenuItem("Izvr\u0161i izmenu");
+			mntmIzvriIzmenu.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					izmeni();
+				}
+			});
 		}
 		return mntmIzvriIzmenu;
 	}
