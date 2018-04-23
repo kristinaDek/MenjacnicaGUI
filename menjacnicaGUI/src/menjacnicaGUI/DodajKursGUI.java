@@ -163,6 +163,7 @@ public class DodajKursGUI extends JFrame {
 					try {
 						String tekstKurs = "DODAVANJE KURSA: šifra: "+textFieldSifra.getText()+", naziv: "+textFieldNaziv.getText()+", prodajni :"+textFieldProdajniKurs.getText()+", kupovni: "+textFieldKupovniKurs.getText()+", srednji: "+textFieldSrednjiKurs.getText()+", skraceni naziv: "+textFieldSkraceniNaziv.getText();
 						mn.dopisivanje(tekstKurs);
+						dispose();
 				} catch (Exception e1) {
 						JOptionPane.showMessageDialog(null,
 						e1.getMessage(), "Greska",

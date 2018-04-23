@@ -191,6 +191,7 @@ public class IzvrsiZamenuGUI extends JFrame {
 					try {
 						String tekstKurs = "IZMENA KURSA: valuta:"+comboBox.getSelectedItem().toString() +"iznos: "+textFieldIznos.getText()+"kupovina ili prodaja: "+odgovor;
 						mn.dopisivanje(tekstKurs);
+						dispose();
 				} catch (Exception e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Greska", JOptionPane.ERROR_MESSAGE);
 					}
